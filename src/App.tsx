@@ -1,27 +1,43 @@
-import QuestionNavigation from "./compoments/QuestionNavigation"
-import QuestionsList from "./compoments/QuestionsHandler"
+import { useEffect, useState } from "react"
+import { getJSON } from "./compoments/api/api"
+import { Questions } from "./types/questions";
+import { DisplayQuestions } from "./compoments/DisplayQuestions";
+import QuestionNavigation from "./compoments/QuestionNavigation";
 
 
 function App() {
+
+  const [questions, setQuestions] = useState<Questions | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+  const [totalQuestion, setTotalQuestion] = useState<number>(0);
+  const [loading, setLoading] = useState<Boolean>(false);
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      const data: Questions = await getJSON<Questions>("../question.json");
+      setQuestions(data);
+      setCurrentQuestion(0);
+      setTotalQuestion(data.length)
+      console.log(data)
+      setLoading(true);
+    }
+    fetchQuestions();
+  }, [])
+
+  const handleQuestionChange = (newQuestion: number) => {
+    setCurrentQuestion(newQuestion);
+  };
+
+
   return (
     <div className="App">
       <div className="container overflow-hidden text-center">
         <div className="row">
-          <div className="col p-3">
-              <h2>WikiTruth</h2>
-            <div className="row">
-            <button type="submit" className="g-col-4 btn btn-primary" value="Submit" >Answer 1</button>
-                <button type="submit" className="g-col-4 btn btn-primary" value="Submit">Answer 2</button>
-                <button type="submit" className="g-col-4 btn btn-primary" value="Submit" >Answer 3</button>
-                <button type="submit" className="g-col-4 btn btn-primary" value="Submit">Answer 4</button>
-            </div>
-          </div>
           <div className="error"></div>
           <p>Test</p>
-          <QuestionsList/>
-          <p>Test</p>
-        <QuestionNavigation/>
-        
+          {loading && questions! ? <DisplayQuestions data={questions[currentQuestion]} /> : null}
+          <QuestionNavigation 
+            totalQuestion={totalQuestion} currentQuestion={currentQuestion} onQuestionChange={handleQuestionChange}/>
         </div >
         <footer className="bg-light text-center text-lg-start fixed-bottom">
           <div className="text-center p-3" >

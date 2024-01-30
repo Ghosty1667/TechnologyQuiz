@@ -1,22 +1,38 @@
-import React, { Component, MouseEvent } from 'react';
+import React, { useState } from 'react';
 
-function QuestionNavigation() {
+interface Pagination{
+    totalQuestion : number;
+    currentQuestion: number;
+    onQuestionChange: (newNumber : number) => void;
+   
 
+}
 
-    const handleClick = (event: MouseEvent) => {
-        event.preventDefault();
-        console.log("Test") // alerts BUTTON
+const QuestionNavigation : React.FC<Pagination> = ({totalQuestion,currentQuestion,onQuestionChange}) => {
+    const totalNumber = []
+    for (let i = 0; i < totalQuestion; i++) {
+        totalNumber.push(i)
     }
 
+
+    const [activePage, setActivePage] = useState(1)
+
+
+    const handlePageClick = (number: number) => {
+        setActivePage(number)
+        onQuestionChange(activePage)
+    }
+
+   
 
     return (
         <nav aria-label="Page navigation example">
             <ul className="pagination">
-                <li className="page-item"><a className="page-link" href="#">Previous</a></li>
-                <li className="page-item" onClick={handleClick}><a className="page-link" href="#">1</a></li>
-                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                <li className="page-item"><a className="page-link" href="#">Next</a></li>
+                {totalNumber.map(number => (
+                    <li className="page-item" onClick={() => {
+                        handlePageClick(number);
+                    }}><a className="page-link" href="#" key={number}>{number + 1}</a></li>
+                ))}
             </ul>
         </nav>
     )

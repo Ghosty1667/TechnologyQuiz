@@ -1,6 +1,6 @@
-    interface Question {
+    export interface Question {
         question: string;
-        answer: []; 
+        answer: string[];
         key: any;
     }
 
