@@ -3,16 +3,18 @@ import { Question } from "../types/questions";
 
 interface Props{
     data: Question;
+    onAnswerClick: (newNumber : number) => void;
 }
- export const DisplayQuestions : React.FC<Props> = ({data}) => {
+ export const DisplayQuestions : React.FC<Props> = ({data, onAnswerClick}) => {
+
     return (<div>
 
         <div className="col p-3">
-            <h2>{data?.question}</h2>
-            <div className="row">
-                {data?.question && data?.answer.map((answer) => {
+            <h1 className='p-5'>{data?.question}</h1>
+            <div className="d-grid gap-2 col-10 mx-auto">
+                {data?.question && data?.answer.map((answer, index : number) => {
                     return (
-                        <button type="submit" className="g-col-4 btn btn-primary" value="Submit" >{answer}</button>
+                        <button type="button" className="btn btn-lg btn-secondary p-3"  value={index} key={index} onClick={()=>{onAnswerClick(index)}}>{answer}</button>
                     )
                 })}
 
