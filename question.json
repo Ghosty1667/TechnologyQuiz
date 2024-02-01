@@ -2,31 +2,31 @@
     {
       "question": "What is the time?",
       "answer": ["Times","Days"],
-      "key": "Test"
+      "correct" : 0
     },
     {
       "question": "What is the day",
       "answer": ["123","123","123","123"],
-      "key": "Test"
+      "correct" : 2
     },
     {
       "question": "What is the day",
       "answer": ["123","123","123","123"],
-      "key": "Test"
+      "correct" : 0
     },
     {
       "question": "What is the day",
       "answer": ["123","123","123","123"],
-      "key": "Test"
+      "correct" : 0
     },
     {
       "question": "What is the day",
       "answer": ["123","123","123","123"],
-      "key": "Test"
+      "correct" : 0
     },
     {
       "question": "What is the day",
       "answer": ["123","123","123","123"],
-      "key": "Test"
+      "correct" : 0
     }
 ]

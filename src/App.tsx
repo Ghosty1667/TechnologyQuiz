@@ -5,6 +5,7 @@ import { DisplayQuestions } from "./compoments/DisplayQuestions";
 import QuestionNavigation from "./compoments/QuestionNavigation";
 import {NavBar} from "./compoments/NavBar";
 import Dictionary from "./types/dictionary";
+import { Link, useNavigate } from "react-router-dom";
 
 
 let response : Dictionary<number> = {};
@@ -16,6 +17,12 @@ function App() {
   const [totalQuestion, setTotalQuestion] = useState<number>(0);
 
   const [loading, setLoading] = useState<boolean>(false);
+
+  const navigate = useNavigate();
+
+  const toResults = () => {
+    navigate('Results',{state:{"response" : response, "questions": questions}});
+  }
 
 
   useEffect(() => {
@@ -45,9 +52,10 @@ function App() {
       <div className="container overflow-hidden text-center">
       
         <div className="row">
+          <h5>Question {currentQuestion}</h5>
           {loading && questions! ? <DisplayQuestions data={questions[currentQuestion]} onAnswerClick={handleAnswerChange} /> : null}
           <QuestionNavigation
-            totalQuestion={totalQuestion} currentQuestion={currentQuestion} onQuestionChange={handleQuestionChange} />
+            totalQuestion={totalQuestion} currentQuestion={currentQuestion} onQuestionChange={handleQuestionChange} /><button onClick={toResults}>Submit</button>
           <footer className="bg-light text-center text-lg-start fixed-bottom">
             <div className="text-center p-3" >
               <a>Test</a>

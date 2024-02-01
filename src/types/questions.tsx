@@ -1,7 +1,7 @@
     export interface Question {
         question: string;
         answer: string[];
-        key: any;
+        correct: number;
     }
 
     export interface Questions extends Array<Question> {}
