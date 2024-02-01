@@ -15,7 +15,7 @@ export const NavBar : React.FC<NavbarInfo> = ({currentQuestion, totalQuestion,cu
       <nav className="navbar bg-light">
         <div className="container">
           <a className="navbar-brand" href="/">
-            <h3> Technology Questions</h3>
+            <h3> Technology Quiz</h3>
           </a>
           <div className="d-flex align-items-center" role="">
           {totalQuestion  ? <h3 className="m-3">{currentQuestion!+1}/{totalQuestion}</h3> : ""}
