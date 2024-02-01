@@ -25,7 +25,7 @@ export const ResultTable: React.FC<response> = ({ questions, response }) => {
                                 <th scope="row">{index + 1}</th>
                                 <td>{questions.question}</td>
                                 <td>{questions.answer[questions.correct]}</td>
-                                <td>{response[index]}</td>
+                                <td>{questions.answer[response[index]]! ? questions.answer[response[index]] : <p>N/A</p>}</td>
                                 <td>{questions.answer[response[index]] === questions.answer[questions.correct] ?
                                    
                                         <input className="form-check-input" type="checkbox" value="True" disabled checked></input>

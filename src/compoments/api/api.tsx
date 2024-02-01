@@ -1,5 +1,3 @@
-
-
 export function getJSON<T>(url: string): Promise<T> {
   return fetch(url)
     .then(response => {

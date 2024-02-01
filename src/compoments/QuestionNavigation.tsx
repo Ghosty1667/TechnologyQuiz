@@ -26,20 +26,19 @@ const QuestionNavigation: React.FC<Pagination> = ({ totalQuestion, currentQuesti
 
     const handlePrevClick = () => {
 
-        if (currentQuestion > 0) {
-            onQuestionChange(activePage - 1)
-            setActivePage(activePage - 1)
+        if (activePage > 0) {
+            setActivePage(currentQuestion - 1)
+            onQuestionChange(currentQuestion - 1)
+      
         }
 
     }
 
     const handleNextClick = () => {
 
-        if (currentQuestion < totalNumber.length) {
-            
-            onQuestionChange(activePage + 1)
-            setActivePage(activePage + 1)
-      
+        if (activePage <= totalNumber.length) {
+            setActivePage(currentQuestion + 1)
+            onQuestionChange(currentQuestion + 1)      
         }
 
     }
@@ -50,13 +49,13 @@ const QuestionNavigation: React.FC<Pagination> = ({ totalQuestion, currentQuesti
     return (
         <div className="grid gap-0 row-gap-3 allign-items-right">
             <nav>
-                <ul className="pagination p-2 g-col-6">
-                    <li className='page-item'> <button className={`page-link pagination ${activePage === 0 ? "disabled" : ""}`} onClick={() => handlePrevClick}>Prev</button></li>
+                <ul className="pagination p-2 g-col-6 pagination-lg">
+                    <li className='page-item'> <button className={`page-link ${activePage === 0 ? "disabled" : ""}`} onClick={() => handlePrevClick()}>Prev</button></li>
                     {totalNumber.map(number => (
                         <li className={`page-item ${activePage === number ? "active" : ""}`} key={number} onClick={() => handlePageClick(number)}>
                             <a className="page-link" href="#" >{number + 1}</a>
                         </li>))}
-                    <li className='page-item'> <button className={`page-link pagination ${(activePage > totalNumber.length -2) === true  ? "disabled" : ""}`} onClick={() => handleNextClick}>Next</button></li>
+                    <li className='page-item'> <button className={`page-link ${(activePage > totalNumber.length -2) === true  ? "disabled" : ""}`} onClick={() => handleNextClick()}>Next</button></li>
                 </ul>
 
             </nav>

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import response from "../types/response";
 
+
 export const ProgressBar : React.FC<response> = ({questions,response}) => {
-    const [progress, setProgress] = useState<number>(getScore());
+    const [progress] = useState<number>(getScore());
 
     const getColor = () => {
         if (progress < 40) {
@@ -15,6 +16,8 @@ export const ProgressBar : React.FC<response> = ({questions,response}) => {
         }
     }
 
+
+
     function getScore(){
         let score = 0;
         questions?.map((questions, index : number ) => {
@@ -22,15 +25,15 @@ export const ProgressBar : React.FC<response> = ({questions,response}) => {
             score++;
             console.log(questions.answer[response[index]] +" " + questions.answer[questions.correct])
            }})
-        score = score / questions.length * 100
-   
+
         return score
     }
 
     return (
         <div className="container">
+            <h2>Score: {progress} / {questions.length}</h2>
             <div className="progress">
-                <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, backgroundColor: getColor() }} aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}></div>
+                <div className="progress-bar" role="progressbar" style={{ width: `${progress / questions.length * 100}%`, backgroundColor: getColor() }} aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}></div>
             </div>
         </div>
     )

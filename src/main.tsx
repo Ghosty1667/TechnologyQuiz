@@ -4,8 +4,6 @@ import App from './pages/App.tsx'
 import Results from './pages/Results.tsx'
 import {
   BrowserRouter,
-  createBrowserRouter,
-  RouterProvider,
   Routes,
   Route
 } from "react-router-dom";

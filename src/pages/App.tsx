@@ -63,16 +63,11 @@ function App() {
       <NavBar totalQuestion={totalQuestion} currentQuestion={currentQuestion} currentTime={secondsLeft}/>
       <div className="container overflow-hidden text-center">
         <div className="row">
-          <h5 className="p-5">Question {currentQuestion + 1}</h5>
+          <h2 className="p-3">Question {currentQuestion + 1}</h2>
           {loading && questions! ? <DisplayQuestions data={questions[currentQuestion]} prevAnswer={userAnswers[currentQuestion]!} onAnswerClick={handleAnswerChange} /> : null}
           <QuestionNavigation
             totalQuestion={totalQuestion} currentQuestion={currentQuestion} onQuestionChange={handleQuestionChange} />
           <button className="btn btn-primary" onClick={toResults}>Submit</button>
-          <footer className="bg-light text-center text-lg-start fixed-bottom">
-            <div className="text-center p-3" >
-              <a>Test</a>
-            </div>
-          </footer>
         </div >
       </div>
     </div>
