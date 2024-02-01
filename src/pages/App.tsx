@@ -60,6 +60,7 @@ function App() {
 
   return (
     <div className="App">
+      <meta content="width=device-width, initial-scale=1.0"/>
       <NavBar totalQuestion={totalQuestion} currentQuestion={currentQuestion} currentTime={secondsLeft}/>
       <div className="container overflow-hidden text-center">
         <div className="row">

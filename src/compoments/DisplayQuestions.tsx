@@ -15,14 +15,20 @@ interface Props{
 
     return (<div>     
         <div className="col">
-            <h1 className=''>{data?.question}</h1>
-            <div className="d-grid gap-2 col-10 mx-auto">
+            <h1>{data?.question}</h1>
+            <div className="d-grid col-10 mx-auto">
                 <h5>Please select an option</h5>
+                <div className='row'>
+                
                 {data?.question && data?.answer.map((answer, index : number) => {
                     return (
+                        <div className="col-md-6 flex-fill d-grid p-1">
                         <button type="button" className={`btn btn-lg ${index === prevAnswer ? "btn-primary" : "btn-secondary"} p-3`} value={index} key={index} onClick={()=>{handleChoiceClick(index)}}>{answer}</button>
+                        </div>
                     )
                 })}
+                
+                </div>
 
             </div>
         </div>

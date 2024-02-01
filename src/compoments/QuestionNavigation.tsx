@@ -49,7 +49,7 @@ const QuestionNavigation: React.FC<Pagination> = ({ totalQuestion, currentQuesti
     return (
         <div className="grid gap-0 row-gap-3 allign-items-right">
             <nav>
-                <ul className="pagination p-2 g-col-6 pagination-lg">
+                <ul className="pagination p-2 g-col-6 pagination-lg flex-wrap">
                     <li className='page-item'> <button className={`page-link ${activePage === 0 ? "disabled" : ""}`} onClick={() => handlePrevClick()}>Prev</button></li>
                     {totalNumber.map(number => (
                         <li className={`page-item ${activePage === number ? "active" : ""}`} key={number} onClick={() => handlePageClick(number)}>
