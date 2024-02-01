@@ -15,28 +15,31 @@ const QuestionNavigation: React.FC<Pagination> = ({ totalQuestion, currentQuesti
     }
 
 
-    const [activePage, setActivePage] = useState(currentQuestion)
+    const [activePage, setActivePage] = useState(0)
 
 
     const handlePageClick = (number: number) => {
         setActivePage(number)
-        onQuestionChange(activePage)
+        onQuestionChange(number)
+        console.log("active page = " + activePage)
     }
 
-    const handlePrevClick = (number: number) => {
+    const handlePrevClick = () => {
 
-        if (currentQuestion < 0) {
-            setActivePage(number)
+        if (currentQuestion > 0) {
             onQuestionChange(activePage - 1)
+            setActivePage(activePage - 1)
         }
 
     }
 
-    const handleNextClick = (number: number) => {
+    const handleNextClick = () => {
 
-        if (currentQuestion >= totalNumber.length) {
-            setActivePage(number)
+        if (currentQuestion < totalNumber.length) {
+            
             onQuestionChange(activePage + 1)
+            setActivePage(activePage + 1)
+      
         }
 
     }
@@ -53,7 +56,7 @@ const QuestionNavigation: React.FC<Pagination> = ({ totalQuestion, currentQuesti
                         <li className={`page-item ${activePage === number ? "active" : ""}`} key={number} onClick={() => handlePageClick(number)}>
                             <a className="page-link" href="#" >{number + 1}</a>
                         </li>))}
-                    <li className='page-item'> <button className={`page-link pagination ${(activePage > totalNumber.length -2) === true  ? "disabled" : ""}`}>Next</button></li>
+                    <li className='page-item'> <button className={`page-link pagination ${(activePage > totalNumber.length -2) === true  ? "disabled" : ""}`} onClick={() => handleNextClick}>Next</button></li>
                 </ul>
 
             </nav>

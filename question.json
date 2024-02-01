@@ -1,32 +1,42 @@
 [
-    {
-      "question": "What is the time?",
-      "answer": ["Times","Days"],
-      "correct" : 0
-    },
-    {
-      "question": "What is the day",
-      "answer": ["123","123","123","123"],
-      "correct" : 2
-    },
-    {
-      "question": "What is the day",
-      "answer": ["123","123","123","123"],
-      "correct" : 0
-    },
-    {
-      "question": "What is the day",
-      "answer": ["123","123","123","123"],
-      "correct" : 0
-    },
-    {
-      "question": "What is the day",
-      "answer": ["123","123","123","123"],
-      "correct" : 0
-    },
-    {
-      "question": "What is the day",
-      "answer": ["123","123","123","123"],
-      "correct" : 0
-    }
+  {
+    "question": "What does the acronym HTML stand for?",
+    "answer": [
+      "Hyper Text Makeup Language",
+      "Hyper Transfer Markup Language",
+      "Hyper Text Markup Language",
+      "High Tech Multimedia Language"
+    ],
+    "correct": 2
+  },
+  {
+    "question": "Who is often referred to as the father of modern computer science?",
+    "answer": [
+      "Alan Turing",
+      "Bill Gates",
+      "Steve Jobs",
+      "Tim Berners-Lee"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "What does the term CPU stand for in the context of computers?",
+    "answer": [
+      "Central Processing Unit",
+      "Computer Processing Unit",
+      "Central Processor Unit",
+      "Central Printed Unit"
+    ],
+    "correct": 0
+  },
+  {
+    "question": " Which programming language is commonly used for building web applications",
+    "answer": [
+      "Python",
+      "Java",
+      "Ruby",
+      "JavaScript"
+    ],
+    "correct": 3
+  }
 ]

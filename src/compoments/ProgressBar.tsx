@@ -20,8 +20,10 @@ export const ProgressBar : React.FC<response> = ({questions,response}) => {
         questions?.map((questions, index : number ) => {
            if(questions.answer[response[index]] === questions.answer[questions.correct]){
             score++;
+            console.log(questions.answer[response[index]] +" " + questions.answer[questions.correct])
            }})
         score = score / questions.length * 100
+   
         return score
     }
 

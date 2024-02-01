@@ -4,6 +4,8 @@ import response from "../types/response";
 
 
 export const ResultTable: React.FC<response> = ({ questions, response }) => {
+    console.log(response)
+    console.log(questions)
     return (
         <div className="table-responsive p-5 container-sm">
             <table className="table table-stripped">
@@ -17,19 +19,18 @@ export const ResultTable: React.FC<response> = ({ questions, response }) => {
                     </tr>
                 </thead>
                 <tbody>
-
                     {questions.map((questions, index: number) => {
                         return (
                             <tr>
-                                <th scope="row">{index}</th>
+                                <th scope="row">{index + 1}</th>
                                 <td>{questions.question}</td>
                                 <td>{questions.answer[questions.correct]}</td>
-                                <td>{response[index]! ? questions.answer[response[index]] : "None"}</td>
+                                <td>{response[index]}</td>
                                 <td>{questions.answer[response[index]] === questions.answer[questions.correct] ?
                                    
-                                        <input className="form-check-input" type="checkbox" value="True" id="work" disabled checked></input>
+                                        <input className="form-check-input" type="checkbox" value="True" disabled checked></input>
                                     :
-                                        <input className="form-check-input" type="checkbox" value="Fales" disabled></input>
+                                        <input className="form-check-input" type="checkbox" value="False" disabled></input>
                                    
                                  }</td>
                             </tr>
