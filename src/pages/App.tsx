@@ -40,12 +40,11 @@ function App() {
     fetchQuestions();
   }, [])
 
-
-  useEffect(() => {
-  // Debug Questions
-    console.log(currentQuestion)
-    console.log(userAnswers)
-  }, [currentQuestion,userAnswers])
+  // useEffect(() => {
+  // // Debug Questions
+  //   console.log(currentQuestion)
+  //   console.log(userAnswers)
+  // }, [currentQuestion,userAnswers])
 
 
   const handleQuestionChange = (newQuestion: number) => {
@@ -64,7 +63,6 @@ function App() {
       <NavBar totalQuestion={totalQuestion} currentQuestion={currentQuestion} currentTime={secondsLeft}/>
       <div className="container overflow-hidden text-center">
         <div className="row">
-          <h2 className="p-3">Question {currentQuestion + 1}</h2>
           {loading && questions! ? <DisplayQuestions data={questions[currentQuestion]} prevAnswer={userAnswers[currentQuestion]!} onAnswerClick={handleAnswerChange} /> : null}
           <QuestionNavigation
             totalQuestion={totalQuestion} currentQuestion={currentQuestion} onQuestionChange={handleQuestionChange} />

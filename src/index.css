@@ -2,3 +2,27 @@ input[type=checkbox]{
     background-color: rgb(255, 0, 0);
     box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 255, 0, 0.25)
   }
+
+  .accordion #correct{
+    --bs-accordion-btn-bg: #6CD55B;
+    --bs-accordion-active-bg: #45C431;
+    --bs-accordion-border-color: #45C431;
+
+    
+  }
+
+
+  .accordion #incorrect{
+    --bs-accordion-btn-bg: #fd6054;
+    --bs-accordion-active-bg: #fc5f54;
+    --bs-accordion-border-color: #f15347;
+
+  }
+
+
+
+  /* .accordion-item #incorrect{
+    --bs-accordion-btn-bg: #ff9100;
+    --bs-accordion-active-bg: #ff9100;
+  }
+   */

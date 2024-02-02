@@ -15,8 +15,8 @@ interface Props{
 
     return (<div>     
         <div className="col">
-            <h1>{data?.question}</h1>
-            <div className="d-grid col-10 mx-auto">
+            <h1 className='p-4 mt-4'>{data?.question}</h1>
+            <div className="d-grid col-10 mx-auto ">
                 <h5>Please select an option</h5>
                 <div className='row'>
                 

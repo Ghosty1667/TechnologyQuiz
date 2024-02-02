@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 
 document.title = "Technology Quiz";
@@ -23,3 +24,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </React.StrictMode>,
 )
+

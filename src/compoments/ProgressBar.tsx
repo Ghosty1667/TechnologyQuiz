@@ -30,7 +30,7 @@ export const ProgressBar : React.FC<response> = ({questions,response}) => {
     }
 
     return (
-        <div className="container">
+        <div className="container p-3">
             <h2>Score: {progress} / {questions.length}</h2>
             <div className="progress">
                 <div className="progress-bar" role="progressbar" style={{ width: `${progress / questions.length * 100}%`, backgroundColor: getColor() }} aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}></div>
