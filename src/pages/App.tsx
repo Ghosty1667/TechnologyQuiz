@@ -35,7 +35,7 @@ function App() {
       setCurrentQuestion(0);
       setTotalQuestion(data.length)
       setLoading(true);
-      start(120);
+      start(100);
     }
     fetchQuestions();
   }, [])

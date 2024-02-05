@@ -7,7 +7,7 @@ interface NavbarInfo {
   currentTime? : number;
 }
 
-const totalTime : number = 120;
+const totalTime : number = 100;
 
 export const NavBar : React.FC<NavbarInfo> = ({currentQuestion, totalQuestion,currentTime}) => {
   return (
