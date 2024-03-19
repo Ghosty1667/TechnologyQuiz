@@ -1,4 +1,6 @@
 # Techonlogy Quiz
+![image](https://github.com/Ghosty1667/TechnologyQuiz/assets/28439844/dba035b2-8f99-426e-a2a7-3efcd41fa7ad)
+
 
 A simple quiz frontend to learn typescript
 
